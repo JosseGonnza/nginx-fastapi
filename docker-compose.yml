@@ -6,6 +6,8 @@ services:
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
       - ./nginx/html:/usr/share/nginx/html:ro
+    depends_on:
+      - api
 
   api:
     build: ./api
